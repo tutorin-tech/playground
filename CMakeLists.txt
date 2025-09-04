@@ -10,3 +10,4 @@ endif()
 
 add_subdirectory(bsd_compat)
 add_subdirectory(bin/cat)
+add_subdirectory(bin/echo)
