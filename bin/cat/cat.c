@@ -59,9 +59,6 @@ main(int argc, char *argv[])
 {
 	int ch;
 
-	if (pledge("stdio rpath", NULL) == -1)
-		err(1, "pledge");
-
 	while ((ch = getopt(argc, argv, "benstuv")) != -1) {
 		switch (ch) {
 		case 'b':
@@ -95,9 +92,6 @@ main(int argc, char *argv[])
 	argv += optind;
 
 	if (argc == 0) {
-		if (pledge("stdio", NULL) == -1)
-			err(1, "pledge");
-
 		cat_file(NULL);
 	} else {
 		for (; *argv != NULL; argv++)
