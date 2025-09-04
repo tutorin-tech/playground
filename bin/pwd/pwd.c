@@ -47,9 +47,6 @@ main(int argc, char *argv[])
 	int ch, lFlag = 0;
 	const char *p;
 
-	if (pledge("stdio rpath", NULL) == -1)
-		err(1, "pledge");
-
 	while ((ch = getopt(argc, argv, "LP")) != -1) {
 		switch (ch) {
 		case 'L':
