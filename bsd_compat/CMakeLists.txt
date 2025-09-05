@@ -1,4 +1,6 @@
 add_library(bsd_compat STATIC
+  src/base64.c
+  src/bsd_getopt.c
   src/progname.c
 )
 
