@@ -213,9 +213,6 @@ main(int argc, char **argv)
 	int fl, error, base64;
 	int bflag, cflag, pflag, rflag, tflag, xflag;
 
-	if (pledge("stdio rpath wpath cpath", NULL) == -1)
-		err(1, "pledge");
-
 	TAILQ_INIT(&hl);
 	input_string = NULL;
 	selective_checklist = NULL;
@@ -326,9 +323,6 @@ main(int argc, char **argv)
 
 	if (ofile == NULL)
 		ofile = stdout;
-
-	if (pledge("stdio rpath", NULL) == -1)
-		err(1, "pledge");
 
 	/* Most arguments are mutually exclusive */
 	fl = pflag + (tflag ? 1 : 0) + xflag + cflag + (input_string != NULL);
