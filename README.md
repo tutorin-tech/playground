@@ -32,6 +32,24 @@ The quickest way to build is to run everything inside a throwaway Docker contain
    cmake --build .
    ```
 
+## Running Tests
+
+To make sure everything works as expected, you can run the included tests for each utility.
+
+1. Install [shUnit2](https://github.com/kward/shunit2) (if not already installed):
+
+   ```bash
+   apt install shunit2
+   ```
+
+2. Run the tests for a specific command (for example, `echo`):
+
+   ```bash
+   sh bin/echo/test.sh
+   ```
+
+Each utility has its own `test.sh` script in its directory. If all tests pass, you'll see a summary with "OK". If something fails, the output will help you track down the issue.
+
 ## Contributing
 
 Clear, consistent commit messages make reviews easy and the history useful. Please follow these rules.
