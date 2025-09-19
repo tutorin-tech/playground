@@ -1,0 +1,21 @@
+{
+    "name": "Fugubox (Ubuntu 24.04)",
+    "image": "ubuntu:24.04",
+    // install packages needed and grant the permission to the ssh from local computer if any
+    "postCreateCommand": "apt-get update && apt-get install -y git build-essential cmake pkg-config libmd-dev && (chmod 700 /root/.ssh && chmod -R 600 /root/.ssh/* && chmod 644 /root/.ssh/*.pub) || true",
+    "customizations": {
+        "vscode": {
+            // install the necessary VSCode Extension.
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cmake-tools"
+            ]
+        }
+    },
+    "mounts": [
+        // mount git & ssh configs from local computer
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    ],
+    "remoteUser": "root"
+}
