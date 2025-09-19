@@ -1,0 +1,31 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake pkg-config libmd-dev shunit2
+
+      - name: Configure CMake
+        run: |
+          mkdir -p build
+          cd build
+          cmake ..
+
+      - name: Build all targets
+        run: |
+          cd build
+          cmake --build .
+
+      - name: Run tests
+        run: |
+          sh bin/echo/test.sh
