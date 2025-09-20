@@ -2,6 +2,7 @@ add_library(bsd_compat STATIC
   src/base64.c
   src/bsd_getopt.c
   src/progname.c
+  src/setmode.c
 )
 
 target_include_directories(bsd_compat PUBLIC
