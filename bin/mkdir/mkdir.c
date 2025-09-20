@@ -79,11 +79,6 @@ main(int argc, char *argv[])
 	argc -= optind;
 	argv += optind;
 
-	if ((mode & (S_ISUID | S_ISGID | S_ISVTX)) == 0) {
-		if (pledge("stdio rpath cpath fattr", NULL) == -1)
-			err(1, "pledge");
-	}
-
 	if (*argv == NULL)
 		usage();
 
