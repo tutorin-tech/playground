@@ -14,3 +14,5 @@ add_subdirectory(bin/echo)
 add_subdirectory(bin/md5)
 add_subdirectory(bin/pwd)
 add_subdirectory(bin/mkdir)
+add_subdirectory(bin/rm)
+
