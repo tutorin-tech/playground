@@ -1,6 +1,6 @@
 A small selection of OpenBSD userland utilities ported to Linux.
 
-Currently included: `cat`, `echo`, `pwd`, `md5`.
+Currently included: `cat`, `echo`, `pwd`, `md5`, `mkdir`.
 
 ## Getting Started
 
