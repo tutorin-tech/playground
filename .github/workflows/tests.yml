@@ -29,3 +29,4 @@ jobs:
       - name: Run tests
         run: |
           sh bin/echo/test.sh
+          sh bin/mkdir/test.sh
