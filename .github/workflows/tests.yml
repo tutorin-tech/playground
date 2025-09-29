@@ -28,5 +28,6 @@ jobs:
 
       - name: Run tests
         run: |
+          sh bin/cat/test.sh
           sh bin/echo/test.sh
           sh bin/mkdir/test.sh
